@@ -1,0 +1,5 @@
+print(8000 > 3330)
+print((8 / 2) + 4 * 8)
+print( 4 != 10)
+print(int(4.56))
+print(True and False)
