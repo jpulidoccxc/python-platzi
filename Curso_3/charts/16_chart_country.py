@@ -1,6 +1,7 @@
 import csv
 import matplotlib.pyplot as plt
 import re
+import pandas as pd
 
 def generate_bar_chart(labels, values, name):
   fig, ax = plt.subplots()
@@ -52,5 +53,14 @@ def generate_south_america_pie_chart():
 
     generate_pie_chart(labels, values)
 
-populationCountryData()
-generate_south_america_pie_chart()
+def populationWithPandas():
+   df = pd.read_csv('../../Curso_2/app/data.csv')
+   df = df[df['Continent'] == 'Africa']
+
+   countries = df['Country/Territory'].values
+   percentages = df['World Population Percentage'].values
+   generate_pie_chart(countries, percentages)
+
+# populationCountryData()
+# generate_south_america_pie_chart()
+populationWithPandas()
