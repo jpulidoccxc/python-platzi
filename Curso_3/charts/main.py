@@ -1,7 +1,7 @@
-import charts
+import chart_country
 
 def run():
-    charts.generate_pie_chart()
+    chart_country.populationWithPandas()
 
 if __name__ == '__main__':
     run()

@@ -13,14 +13,14 @@ def generate_pie_chart(labels, values):
     fig, ax = plt.subplots()
     ax.pie(values, labels=labels, autopct='%1.1f%%', startangle=90)
     ax.axis('equal')
-    plt.savefig('./imgs/pie_chart.png')
+    plt.savefig('./imgs/pie_chart_docker.png')
     plt.close()
 
 def populationCountryData():
   labels = []
   values = []
   country = input('Ingresa el pais: ')
-  with open('../../Curso_2/app/data.csv', 'r') as file:
+  with open('./data.csv', 'r') as file:
     reader = csv.DictReader(file, delimiter=',')
     data = list(filter(lambda item: item['Country/Territory'] == country.capitalize(), reader))
 
@@ -40,7 +40,7 @@ def generate_south_america_pie_chart():
       'Uruguay', 'Venezuela'
     ]
 
-    with open('../../Curso_2/app/data.csv', 'r') as file:
+    with open('./data.csv', 'r') as file:
         reader = csv.DictReader(file, delimiter=',')
         for row in reader:
             if row['Country/Territory'] in south_america_countries:
@@ -54,7 +54,7 @@ def generate_south_america_pie_chart():
     generate_pie_chart(labels, values)
 
 def populationWithPandas():
-   df = pd.read_csv('../../Curso_2/app/data.csv')
+   df = pd.read_csv('./data.csv')
    df = df[df['Continent'] == 'Africa']
 
    countries = df['Country/Territory'].values
