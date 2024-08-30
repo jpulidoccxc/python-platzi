@@ -28,3 +28,13 @@ cat requirements.txt
 
 Instalar las dependencias necesarias para contribuir más rápido en proyectos
 pip3 install -r requirements.txt
+
+Al tener el Dockerfile creado y el docker-compose.yml
+docker-compose build
+docker-compose up -d
+docker-compose exec app-csv bash
+python main.py
+
+Para apagar el contenedor
+docker-compose down
+exit

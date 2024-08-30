@@ -13,7 +13,7 @@ def generate_pie_chart(labels, values):
     fig, ax = plt.subplots()
     ax.pie(values, labels=labels, autopct='%1.1f%%', startangle=90)
     ax.axis('equal')
-    plt.savefig('./imgs/pie_chart_docker.png')
+    plt.savefig('./imgs/pie_chart_docker_v.png')
     plt.close()
 
 def populationCountryData():
@@ -55,7 +55,7 @@ def generate_south_america_pie_chart():
 
 def populationWithPandas():
    df = pd.read_csv('./data.csv')
-   df = df[df['Continent'] == 'Africa']
+   df = df[df['Continent'] == 'Europe']
 
    countries = df['Country/Territory'].values
    percentages = df['World Population Percentage'].values
